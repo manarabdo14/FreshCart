@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bolder" routerLink="home"><i class="fa-solid fa-cart-shopping fa-xl text-main ">
+            </i>Fresh
+            Cart</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="home" routerLinkActive="active-link">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="cart" routerLinkActive="active-link">cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="wishlist" routerLinkActive="active-link">wish
+                        list</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="products"
+                        routerLinkActive="active-link">products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="categories"
+                        routerLinkActive="active-link">categories</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="brands" routerLinkActive="active-link">brands</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                <li class="nav-item position-relative">
+                    <a class="nav-link  text-capitalize"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
+                    <div class="badge position-absolute text-white top-0 end-0 bg-main">{{cartCount}}</div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize cursor-pointer" (click)="logOutUser()">log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

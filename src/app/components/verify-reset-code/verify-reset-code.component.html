@@ -1,0 +1,11 @@
+<section class="bg-main-light p-4 rounded my-3 w-75 mx-auto">
+    <form [formGroup]="chechOut" (ngSubmit)="handleForm()">
+        <label for="Code">Verfiy Code:</label>
+        <input #Code type="Code" id="Code" class="form-control my-2" formControlName="Code">
+        <div class="alert alert-danger my-2"
+            *ngIf="chechOut.get('Code')?.errors && (chechOut.get('Code')?.touched|| Code.value.length >0)">
+            <p *ngIf=" chechOut.get('Code')?.getError('required')">details is required</p>
+        </div>
+        <button class="btn btn-success">Verfiy</button>
+    </form>
+</section>

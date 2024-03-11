@@ -1,0 +1,13 @@
+<section class="container">
+
+    <h2 class=" text-center text-success fw-bolder p-3">All Brands</h2>
+    <div class="row g-4">
+        <div class="col-md-3" *ngFor="let product of  Brands">
+            <div class="product border cursor-pointer m-3" (click)="brandClick(product._id)">
+                <img [src]="product.image" [alt]="product.name" height="250px" class="w-100">
+                <h3 class="h4 text-center p-2">{{product.name}}</h3>
+            </div>
+        </div>
+    </div>
+
+</section>

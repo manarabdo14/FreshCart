@@ -1,0 +1,22 @@
+<section class="container">
+    <div class="row g-4">
+        <div class="col-md-4" *ngFor="let product of categories">
+            <div class="product border cursor-pointer m-3" (click)="getSubCategories(product._id,product.name)">
+                <img [src]="product.image" [alt]="product.name" height="300px" class="w-100">
+                <h3 class="text-success h3 text-center fw-bolder p-3">{{product.name}}</h3>
+            </div>
+        </div>
+        <div>
+            <div *ngIf="isSub">
+                <h3 class="text-success h3 text-center fw-bolder p-3">{{cateName}} subcategories</h3>
+                <div class="row g-4">
+                    <div class="col-md-4" *ngFor="let product of subcategories">
+                        <div class="product border cursor-pointer m-3">
+                            <h3 class="h3 text-center fw-bolder p-3">{{product.name}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

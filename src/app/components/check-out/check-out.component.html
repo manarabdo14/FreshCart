@@ -1,0 +1,29 @@
+<section class="bg-main-light p-4 border-3 shadow w-75 mx-auto">
+    <form [formGroup]="chechOut" (ngSubmit)="handleForm()">
+        <label for="details">Details:</label>
+        <input #details formControlName="details" type="text" id="details" formControlName="details"
+            class="form-control">
+        <div class="alert alert-danger my-2"
+            *ngIf="chechOut.get('details')?.errors && (chechOut.get('details')?.touched|| details.value.length >0)">
+            <p *ngIf=" chechOut.get('details')?.getError('required')">details is required</p>
+        </div>
+        <label for="phone">Phone:</label>
+        <input type="tel" #phone formControlName="phone" id="phone" formControlName="phone" class="form-control">
+        <div class="alert alert-danger my-2"
+            *ngIf="chechOut.get('phone')?.errors && (chechOut.get('phone')?.touched|| phone.value.length >0)">
+            <p *ngIf=" chechOut.get('phone')?.getError('required')">phone is required</p>
+            <p *ngIf=" chechOut.get('phone')?.getError('pattern')">
+                Phone is inavalid
+            </p>
+        </div>
+        <label for="city">City:</label>
+        <input type="text" #city formControlName="city" id="city" formControlName="city" class="form-control">
+        <div class="alert alert-danger my-2"
+            *ngIf="chechOut.get('city')?.errors && (chechOut.get('city')?.touched|| city.value.length >0)">
+            <p *ngIf=" chechOut.get('city')?.getError('required')">city is required</p>
+        </div>
+
+        <button class="btn-main mt-4 w-25 mx-auto d-block"><i class="fa-brands fa-cc-visa fa-lg"
+                style="color: #74C0FC;"></i> Check Out</button>
+    </form>
+</section>
